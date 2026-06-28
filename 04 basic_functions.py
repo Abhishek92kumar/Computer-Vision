@@ -45,7 +45,6 @@ import cv2 as cv
 # The image is stored inside a variable called "img".
 #
 # A variable is like a storage box.
-#
 # Think of it like a lunch box.
 #
 # Instead of storing food,
@@ -107,15 +106,13 @@ cv.imshow('Park', img)
 #
 # This is called a Grayscale image.
 #
-# Grayscale images are easier
-# for many computer vision tasks.
+# Grayscale images are easier for many computer vision tasks.
 #
 # cv.cvtColor()
 #
 # means:
 #
-# Convert one color format
-# into another color format.
+# Convert one color format  into another color format.
 #
 # COLOR_BGR2GRAY means:
 #
@@ -136,8 +133,7 @@ cv.imshow('Gray', gray)
 # BLURRING THE IMAGE
 # ============================================================
 
-# Blurring means making an image
-# less sharp.
+# Blurring means making an image  less sharp.
 #
 # Imagine looking through:
 #
@@ -149,30 +145,25 @@ cv.imshow('Gray', gray)
 #
 # Why blur an image?
 #
-# Because tiny dots,
-# dust,
-# and unwanted noise
-# become less noticeable.
+# Because tiny dots,  dust, and unwanted noise  become less noticeable.
 #
-# This helps computers
-# detect important things more easily.
+# This helps computers detect important things more easily.
 #
 # Gaussian Blur
-#
-# is one of the most popular
-# ways to blur an image.
+# is one of the most popular ways to blur an image.
 #
 # (7,7)
 #
 # is called the Kernel Size.
-#
+# [1111111]
+# [1111111]
+# [1111111]
 # Imagine placing
 # a 7 by 7 square
 # over every pixel.
 #
 # The computer looks at all
-# 49 nearby pixels
-# and calculates a smoother value.
+# 49 nearby pixels and calculates a smoother value.
 #
 # Bigger kernel
 #
@@ -201,49 +192,35 @@ cv.imshow('Blur', blur)
 
 # Edge Detection means:
 #
-# Find the outlines
-# of objects.
+# Find the outlines of objects.
 #
 # Example:
 #
-# Instead of showing
-# an entire tree,
+# Instead of showing an entire tree, the computer only shows the border of the tree.
 #
-# the computer only shows
-# the border of the tree.
-#
-# This makes it easier
-# to understand shapes.
+# This makes it easier to understand shapes.
 #
 # cv.Canny()
 #
 # uses the famous
 # Canny Edge Detection algorithm.
 #
-# It searches the picture
-# for places where colors
-# change suddenly.
+# It searches the picture  for places where colors change suddenly.
 #
-# Those places
-# are usually edges.
+# Those places  are usually edges.
 #
 # The two numbers:
 #
 # 125
-#
 # and
 #
 # 175
 #
 # are threshold values.
 #
-# These numbers help OpenCV
-# decide which edges
-# are important enough to keep.
+# These numbers help OpenCV decide which edges are important enough to keep.
 #
-# We use the blurred image
-# because removing noise
-# gives cleaner edges.
+# We use the blurred image  because removing noise  gives cleaner edges.
 canny = cv.Canny(blur, 125, 175)
 
 # Show the detected edges.
@@ -268,10 +245,8 @@ cv.imshow('Canny Edges', canny)
 #
 # That is exactly
 # what dilation does.
-#
-# This is useful because
-# tiny broken edges
-# become connected together.
+#-------- - ------------------ - --------------------------------
+# This is useful because tiny broken edges become connected together.
 #
 # (7,7)
 #
@@ -302,22 +277,17 @@ cv.imshow('Dilated', dilated)
 # ERODING THE IMAGE
 # ============================================================
 
-# Erosion is the opposite
-# of dilation.
+# Erosion is the opposite of dilation.
 #
-# Instead of making
-# white areas thicker,
+# Instead of making white areas thicker,
 #
 # erosion makes them thinner.
 #
-# Imagine using an eraser
-# on a thick line.
+# Imagine using an eraser on a thick line.
 #
 # It slowly becomes thinner.
 #
-# Again,
-#
-# (7,7)
+# Again, (7,7)
 #
 # is the brush size.
 #
@@ -374,12 +344,9 @@ cv.imshow('Resized', resized)
 # ============================================================
 
 # Cropping means
-# cutting away
-# unwanted parts
-# of a picture.
+# cutting away unwanted parts of a picture.
 #
-# Images behave
-# like huge tables.
+# Images behave like huge tables.
 #
 # Every row
 # goes from left to right.
@@ -409,12 +376,9 @@ cv.imshow('Resized', resized)
 #
 # Stop before column 400
 #
-# Everything inside
-# this rectangle
-# is kept.
+# Everything inside this rectangle is kept.
 #
-# Everything outside
-# is removed.
+# Everything outside is removed.
 cropped = img[50:200, 200:400]
 
 # Display only the cropped part.

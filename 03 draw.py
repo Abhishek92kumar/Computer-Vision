@@ -1,4 +1,3 @@
-#pylint:disable=no-member
 
 import cv2 as cv
 import numpy as np
@@ -10,12 +9,13 @@ cv.imshow('Blank', blank)
 
 # 1. Paint the image a certain colour
 # This will give a blue image
+# Here we use BGR format to specify the color. (255,0,0) is blue in BGR format
 blank[:] = 255,0,0
 cv.imshow('Blue', blank)
 
 # color a specific region of the image
 blank[200:300, 300:400] = 0,0,255
-cv.imshow('Green', blank)
+cv.imshow('Red_rectangle', blank)
 
 # 2. Draw a Rectangle
 cv.rectangle(blank, (0,0), (250,250), (0,255,0), thickness= 2) # thickness = cv.FILLED to fill the rectangle starting from (0,0) to (250,250)
@@ -32,13 +32,16 @@ cv.circle(blank, (blank.shape[1]//2, blank.shape[0]//2), 40, (0,0,255), thicknes
 cv.imshow('Circle', blank)
 
 # 4. Draw a line
+
 cv.line(blank, (100,250), (300,400), (255,255,255), thickness=3)
 cv.imshow('Line', blank)
 
 # 5. Write text
 cv.putText(blank, 'Hello, my name is Abhishek!!!', (0,225), cv.FONT_HERSHEY_TRIPLEX, 1.0, (0,255,0), 2)
+# here 2 is the thickness of the text
 # cv.putText(blank, 'Hello, my name is Abhishek!!!', (0,225), cv.FONT_HERSHEY_TRIPLEX, 1.0, (0,255,0), 2) here 1.0 is the font scale and 2 is the thickness of the text
 # FONT_HERSHEY_TRIPLEX is the font type and (0,255,0) is the color of the text in BGR format
 cv.imshow('Text', blank)
 
 cv.waitKey(0)
+

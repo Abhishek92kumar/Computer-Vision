@@ -25,7 +25,6 @@
 # we give it a shorter nickname called "cv".
 import cv2 as cv
 
-
 # Now we import another library called NumPy.
 #
 # NumPy helps us work with numbers.
@@ -266,7 +265,7 @@ cv.imshow('Canny Edges', canny)
 
 
 # ============================================================
-# THRESHOLDING (NOT USED HERE)
+# THRESHOLDING
 # ============================================================
 
 #
@@ -288,15 +287,15 @@ cv.imshow('Canny Edges', canny)
 # Otherwise
 #
 # make it Black.
-#
-# ret, thresh = cv.threshold(
-#     gray,
-#     125,
-#     255,
-#     cv.THRESH_BINARY
-# )
-#
-# cv.imshow('Thresh', thresh)
+
+ret, thresh = cv.threshold(
+    gray,
+    125,
+    255,
+    cv.THRESH_BINARY
+)
+
+cv.imshow('Thresh', thresh)
 
 
 # ============================================================
@@ -331,8 +330,8 @@ cv.imshow('Canny Edges', canny)
 # only important contour points.
 contours, hierarchies = cv.findContours(
     canny,
-    cv.RETR_LIST,
-    cv.CHAIN_APPROX_SIMPLE
+    cv.RETR_LIST, #Retrieves all contours without establishing any parent-child hierarchies
+    cv.CHAIN_APPROX_SIMPLE 
 )
 
 
@@ -359,6 +358,13 @@ contours, hierarchies = cv.findContours(
 # inside the sentence.
 print(f'{len(contours)} contour(s) found!')
 
+# without chain approximation_simple number of points in contours will be more than with chain approximation_simple.
+contours, hierarchies = cv.findContours(
+    image=thresh,
+    mode=cv.RETR_LIST,
+    method=cv.CHAIN_APPROX_NONE #Stores every single boundary point, maximizing detail at the expense of memory.
+)
+print(f'{len(contours)} total contour(s) found without approximation!')
 
 # ============================================================
 # DRAWING CONTOURS

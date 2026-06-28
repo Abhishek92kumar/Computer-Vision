@@ -95,14 +95,11 @@ cv.imshow('Cats', img)
 #
 # Dark pixels become black.
 #
-# Everything in between
-# becomes different shades of gray.
+# Everything in between becomes different shades of gray.
 #
-# This is called
-# a Grayscale Image.
+# This is called a Grayscale Image.
 #
-# Grayscale images are much easier
-# for computers to process.
+# Grayscale images are much easier for computers to process.
 #
 # cv.cvtColor()
 #
@@ -131,39 +128,24 @@ cv.imshow('Gray', gray)
 
 # Thresholding means:
 #
-# Turning an image
-# into only TWO colors.
+# Turning an image into only TWO colors.
 #
-# Black
-#
-# and
-#
-# White
-#
+# Black and White
 # There will be NO gray pixels.
-#
 # Imagine a teacher says:
-#
 # "Anyone scoring 50 or more passes."
-#
 # Everyone else fails.
-#
 # Thresholding works exactly like that.
 #
-# Every pixel gets compared
-# with one chosen number.
+# Every pixel gets compared with one chosen number.
 #
-# That number is called
-# the Threshold.
-
+# That number is called the Threshold.
 
 # cv.threshold()
 #
 # returns TWO things.
 #
-# First:
-#
-# threshold
+# First: threshold
 #
 # This stores the threshold value
 # that OpenCV actually used.
@@ -232,11 +214,8 @@ cv.imshow('Simple Thresholded', thresh)
 #
 # Dark -> White
 threshold, thresh_inv = cv.threshold(
-
     gray,
-
     150,
-
     255,
 
     # THRESH_BINARY_INV means:

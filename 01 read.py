@@ -1,12 +1,13 @@
 import os
 import cv2 as cv
 
+# Reading the image
 
-img = cv.imread('C:/Users/abhis/AGAD/Advanced/opencv-course/Resources/Photos/cat.jpg')
-cv.imshow('Cats', img)
+"""img = cv.imread('C:/Users/abhis/AGAD/Advanced/opencv-course/Resources/Photos/cat.jpg')
+cv.imshow('Cats', img) # Cats is the name of the window, img is the image to be displayed
 
 cv.waitKey(0)
-
+"""
 # Reading Videos
 capture = cv.VideoCapture('C:/Users/abhis/AGAD/Advanced/opencv-course/Resources/Videos/dog.mp4')
 
