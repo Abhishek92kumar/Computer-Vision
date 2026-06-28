@@ -1,8 +1,8 @@
-#pylint:disable=no-member
 
 import cv2 as cv
 
-img = cv.imread('../Resources/Photos/cats.jpg')
+img = cv.imread('C:/Users/abhis/AGAD/Advanced/opencv-course/Resources/Photos/cat.jpg')
+
 cv.imshow('Cats', img)
 
 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
