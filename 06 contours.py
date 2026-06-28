@@ -122,7 +122,6 @@ blank = np.zeros(
 # Show the completely black image.
 cv.imshow('Blank', blank)
 
-
 # ============================================================
 # CONVERT IMAGE TO GRAYSCALE
 # ============================================================
@@ -270,9 +269,6 @@ cv.imshow('Canny Edges', canny)
 # THRESHOLDING (NOT USED HERE)
 # ============================================================
 
-# These lines are commented out.
-#
-# Python ignores commented lines.
 #
 # Thresholding changes an image
 # into only two colors.
@@ -312,33 +308,22 @@ cv.imshow('Canny Edges', canny)
 # Imagine drawing around the edge
 # of a leaf with a pencil.
 #
-# That outline
-# is called a contour.
+# That outline is called a contour.
 #
-# OpenCV looks at the edges
-# and finds these outlines.
+# OpenCV looks at the edges  and finds these outlines.
 #
 # findContours() returns TWO things.
 #
-# First:
+# First:# contours # This is a list of all outlines found.
 #
-# contours
-#
-# This is a list of all outlines found.
-#
-# Second:
-#
-# hierarchies
-#
-# This stores information about
+# Second:# hierarchies # This stores information about
 # which contour is inside another contour.
 #
 # RETR_LIST means:
 #
 # Find every contour.
 #
-# Do not organize them
-# into parent and child groups.
+# Do not organize them into parent and child groups.
 #
 # CHAIN_APPROX_SIMPLE means:
 #
